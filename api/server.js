@@ -1,13 +1,13 @@
 const express = require('express');
 const helmet = require('helmet');
-const auth = require('./data/router/auth.js');
-
-const db = require('./data/dbConfig.js')
+const cors = require('cors');
+const auth = require('../router/auth.js');
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
+server.use(cors());
 
 server.use('/api/', auth);
 
