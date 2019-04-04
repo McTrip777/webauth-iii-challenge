@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-// import { withRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import LoginNav from './components/login/loginNav'
 
-// import authenticate from './components/login/authentication';
+import Home from './components/login/Home';
+import LoginPage from './components/login/LoginPage';
+import Register from './components/login/Register';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Auth/> */}
+        <header>
+          <LoginNav/>
+        </header>
+        <main>
+          <Route exact path='/' component={Home}/>
+          <Route path='/login' component={LoginPage} />
+          <Route path='/register' component={Register} />
+        </main>
       </div>
     );
   }

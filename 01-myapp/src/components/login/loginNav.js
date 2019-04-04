@@ -20,11 +20,12 @@ const LoginNav = (props) => {
     return ( 
         <div>
             <Nav>
-                <StyledLink to="/login" component = {LoginPage}> Log In </StyledLink>
-                <StyledLink to="/signup" component = {SignUp}>  Sign Up </StyledLink>
+                <StyledLink to="/" > Home </StyledLink>
+                <StyledLink to="/login" > Log In </StyledLink>
+                <StyledLink to="/register" >  Register </StyledLink>
             </Nav>
         </div>
      );
 }
- 
+
 export default LoginNav;
