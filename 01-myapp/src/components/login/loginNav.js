@@ -20,9 +20,10 @@ const LoginNav = (props) => {
     return ( 
         <div>
             <Nav>
-                <StyledLink to="/" > Home </StyledLink>
-                <StyledLink to="/login" > Log In </StyledLink>
-                <StyledLink to="/register" >  Register </StyledLink>
+                <StyledLink to="/">Home</StyledLink>
+                <StyledLink to="/login" >Log In</StyledLink>
+                <StyledLink to="/register" >Register</StyledLink>
+                <StyledLink to="/users" >Users</StyledLink>
             </Nav>
         </div>
      );

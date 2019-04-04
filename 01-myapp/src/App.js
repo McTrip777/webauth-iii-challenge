@@ -6,6 +6,7 @@ import LoginNav from './components/login/loginNav'
 import Home from './components/login/Home';
 import LoginPage from './components/login/LoginPage';
 import Register from './components/login/Register';
+import User from './components/Users/User';
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path='/' component={Home}/>
           <Route path='/login' component={LoginPage} />
           <Route path='/register' component={Register} />
+          <Route path='/users' component={User} />
         </main>
       </div>
     );

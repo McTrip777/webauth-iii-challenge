@@ -37,6 +37,7 @@ render() {
                 onChange={this.handleInputChange} 
                 name='username' 
                 type='text'
+                placeholder='Username'
                 />
             </div>
             <div>
@@ -46,6 +47,7 @@ render() {
                 onChange={this.handleInputChange} 
                 name='password' 
                 type='password'
+                placeholder='Password'
                 />
 
             </div>
