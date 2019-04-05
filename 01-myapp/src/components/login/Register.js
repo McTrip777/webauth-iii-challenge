@@ -1,41 +1,36 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const newUser = {
-  username: '',
-  password: '',
-};
-
 export class Login extends Component {
   state = {
-  user: { ...newUser },
+    username: '',
+    password: '',
     text: ''
   };
   
   handleSubmit = event => {
       event.preventDefault();
       axios
-      .post(`/auth/register`, this.state.user)
+      .post(`/auth/register`, {
+        username:this.state.username,
+        password:this.state.password
+      })
       .then(res => {
-        if (res.status === 201) {
           this.setState({
             text: 'Registration Successful',
-            user: { ...newUser }
+            username:'',
+            password:''          
           });
           this.props.history.push('/login');
-        }
       })
       .catch(err => {
-        this.setState({
-          text: err.response.data.message,
-          user: { ...newUser }
-        });
+        console.log(err)
       });
   }
 
   handleInputChange = event => {
       const { name, value } = event.target;
-      this.setState({ user: { ...this.state.user, [name]: value }})
+      this.setState({ [name]: value })
   }
   
 render() {
@@ -46,7 +41,7 @@ render() {
             <div>
                 <label htmlFor="username"/>
                 <input 
-                value={this.state.user.username} 
+                value={this.state.username} 
                 onChange={this.handleInputChange} 
                 name='username' 
                 type='text'
@@ -56,7 +51,7 @@ render() {
             <div>
                 <label htmlFor="password"/>
                 <input 
-                value={this.state.user.password} 
+                value={this.state.password} 
                 onChange={this.handleInputChange} 
                 name='password' 
                 type='password'

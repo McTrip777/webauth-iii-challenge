@@ -25,7 +25,6 @@ export class LoginPage extends Component {
     event.preventDefault();
     window.localStorage.clear();
     this.props.history.push('/login');
-
 }
 
   handleInputChange = event => {
@@ -62,7 +61,7 @@ render() {
             </div>
         </form>
         <div>
-            <button onSubmit={this.signOut}>Logout</button>
+            <button onClick={this.signOut}>Logout</button>
         </div>
     </>
     )

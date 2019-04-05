@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import requiresAuth from './requiresAuth';
 
-export class Users extends Component {
+export class User extends Component {
     state = {
         users: []
     }
@@ -32,4 +32,4 @@ axios
   }
 }
 
-export default requiresAuth(Users)
+export default requiresAuth(User)
