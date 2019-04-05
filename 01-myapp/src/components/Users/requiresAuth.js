@@ -1,9 +1,9 @@
 import React from 'react'
-import Axios from 'axios';
+import axios from 'axios';
 
-Axios.defaults.baseURL = 'http://localhost:5000/api'
+axios.defaults.baseURL = 'http://localhost:5000/api'
 
-Axios.interceptors.request.use(function(requestConfig){
+axios.interceptors.request.use(function(requestConfig){
     const token = localStorage.getItem('token');
     requestConfig.headers.authorization = token;
     return requestConfig;

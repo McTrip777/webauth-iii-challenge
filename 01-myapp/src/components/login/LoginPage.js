@@ -14,16 +14,22 @@ export class LoginPage extends Component {
       .then(res => {
           console.log('login response', res);
           localStorage.setItem('token', res.data.token);
-
+          this.props.history.push('/');
       })
       .catch(error => {
           console.log('error', error)
       })
   }
 
+  signOut = event => {
+    event.preventDefault();
+    window.localStorage.clear();
+    this.props.history.push('/login');
+
+}
+
   handleInputChange = event => {
-      const { name, value } = event.target;
-      this.setState({ [name]: value })
+      this.setState({ [event.target.name]: event.target.value })
   }
   
 render() {
@@ -55,6 +61,9 @@ render() {
                 <button type='submit'>Login</button>
             </div>
         </form>
+        <div>
+            <button onSubmit={this.signOut}>Logout</button>
+        </div>
     </>
     )
 }
